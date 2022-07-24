@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chaiyaphat.artbook_full_test.model.ImageResponse
 import com.chaiyaphat.artbook_full_test.repo.ArtRepository
+import com.chaiyaphat.artbook_full_test.repo.ArtRepositoryInterface
 import com.chaiyaphat.artbook_full_test.roomdb.Art
 import com.chaiyaphat.artbook_full_test.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ArtViewModel @Inject constructor(private val repository: ArtRepository) : ViewModel() {
+class ArtViewModel @Inject constructor(private val repository: ArtRepositoryInterface) : ViewModel() {
     //Art Fragment
     val artList = repository.getArt()
 
