@@ -29,7 +29,7 @@ class ImageRecycleViewAdapter @Inject constructor(
     }
     private val recycleListDiffer = AsyncListDiffer(this, diffUtil)
 
-    private var images: List<String>
+    var images: List<String>
         get() = recycleListDiffer.currentList
         set(value) = recycleListDiffer.submitList(value)
 
