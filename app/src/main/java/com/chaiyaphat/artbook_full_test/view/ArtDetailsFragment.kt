@@ -28,6 +28,7 @@ class ArtDetailsFragment @Inject constructor(
         fragmentBindings = binding
 
         viewModel = ViewModelProvider(requireActivity())[ArtViewModel::class.java]
+        subscribeToObservers()
 
         binding.artImageView.setOnClickListener {
             findNavController().navigate(ArtDetailsFragmentDirections.actionArtDetailsFragmentToImageApiFragment())
@@ -38,6 +39,7 @@ class ArtDetailsFragment @Inject constructor(
                 findNavController().popBackStack()
             }
         }
+
 
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
